@@ -1,13 +1,40 @@
+/* General page style */
 body {
   font-family: Arial, sans-serif;
-  margin: 40px;
+  margin: 0;
   background: #f9f9f9;
 }
+
+/* Navigation bar */
+nav {
+  background: #2c3e50;
+  padding: 15px;
+}
+
+nav a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
 h1 {
   color: #2c3e50;
+  margin: 20px;
 }
-nav a {
-  margin-right: 15px;
-  text-decoration: none;
-  color: #2980b9;
+
+h2 {
+  color: #34495e;
+  margin: 20px 0 10px 20px;
+}
+
+/* Paragraphs */
+p {
+  margin: 0 20px 20px 20px;
+  font-size: 16px;
 }
