@@ -73,7 +73,7 @@ nav a:hover {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  width: 200px;
+  width: 220px;
   text-align: center;
 }
 
@@ -86,14 +86,23 @@ nav a:hover {
 }
 .project {
   background: white;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ddd;
-  width: 250px;
+  width: 280px;
   text-align: center;
+  border-radius: 8px;
 }
 .project img {
   max-width: 100%;
   border-radius: 8px;
+}
+.project h3 {
+  margin-top: 10px;
+  color: #2c3e50;
+}
+.project p {
+  font-size: 14px;
+  color: #555;
 }
 
 /* Testimonials */
@@ -103,6 +112,7 @@ blockquote {
   border-left: 5px solid #2c3e50;
   font-style: italic;
   text-align: center;
+  border-radius: 8px;
 }
 
 /* Footer */
@@ -115,4 +125,7 @@ footer {
 footer a {
   color: #1abc9c;
   text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
