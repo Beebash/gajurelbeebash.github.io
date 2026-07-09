@@ -4,19 +4,23 @@
   <meta charset="UTF-8">
   <title>Beebash Gajurel - Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <!-- Hero Section -->
   <header class="hero">
-    <img src="assets/profile.JPG" alt="Beebash Gajurel" class="profile-pic">
-    <h1>Hello, I'm Beebash Gajurel</h1>
-    <p>Customer Service Specialist | Operations & API Troubleshooting</p>
-    <div class="stats">
-      <div><strong>7+</strong> Years Experience</div>
-      <div><strong>484+</strong> Dealers Coordinated</div>
-      <div><strong>End-to-End</strong> Transaction Monitoring</div>
-      <div><strong>API & Logic</strong> Implementations</div>
+    <div class="overlay">
+      <img src="assets/profile.JPG" alt="Beebash Gajurel" class="profile-pic">
+      <h1>Hello, I'm Beebash Gajurel</h1>
+      <p>Customer Service Specialist | Operations & API Troubleshooting</p>
+      <div class="stats">
+        <div><strong>7+</strong> Years Experience</div>
+        <div><strong>484+</strong> Dealers Coordinated</div>
+        <div><strong>End-to-End</strong> Transaction Monitoring</div>
+        <div><strong>API & Logic</strong> Implementations</div>
+      </div>
     </div>
   </header>
 
@@ -32,10 +36,22 @@
   <section class="section">
     <h2>My Services</h2>
     <div class="services">
-      <div class="service">Operations Management</div>
-      <div class="service">Partner Coordination (484+ Dealers)</div>
-      <div class="service">API Troubleshooting & Logic Implementation</div>
-      <div class="service">Transaction Reconciliation</div>
+      <div class="service">
+        <i class="fas fa-cogs"></i>
+        <h3>Operations Management</h3>
+      </div>
+      <div class="service">
+        <i class="fas fa-users"></i>
+        <h3>Partner Coordination (484+ Dealers)</h3>
+      </div>
+      <div class="service">
+        <i class="fas fa-code"></i>
+        <h3>API Troubleshooting</h3>
+      </div>
+      <div class="service">
+        <i class="fas fa-chart-line"></i>
+        <h3>Transaction Reconciliation</h3>
+      </div>
     </div>
   </section>
 
@@ -46,4 +62,36 @@
       <div class="project">
         <img src="assets/project1.jpg" alt="NEA Token Issue Fix">
         <h3>NEA Token Issue Fix</h3>
-        <p>Resolved token validation
+        <p>Resolved token validation errors by implementing conditional logic improvements.</p>
+      </div>
+      <div class="project">
+        <img src="assets/project2.jpg" alt="Transaction Reconciliation Dashboard">
+        <h3>Transaction Reconciliation</h3>
+        <p>Daily and monthly reconciliation across telecom, utility, and eWallet platforms.</p>
+      </div>
+      <div class="project">
+        <img src="assets/project3.jpg" alt="Cross-Border Monitoring">
+        <h3>Cross-Border Monitoring</h3>
+        <p>Strengthened PayPoint Nepal’s presence through partnerships in India, Qatar, Bangladesh, Malaysia, and Europe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <h2>Clients & Partners Feedback</h2>
+    <blockquote>
+      “Beebash’s problem-solving and coordination skills ensured smooth reconciliation and dealer satisfaction across multiple platforms.”
+    </blockquote>
+  </section>
+
+  <!-- Contact -->
+  <footer id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Office Email: <a href="mailto:b.gajurel@paypoint.com.np">b.gajurel@paypoint.com.np</a></p>
+    <p>Personal Email: <a href="mailto:gajurelbeebash@gmail.com">gajurelbeebash@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/beebash-gajurel-238b9316a" target="_blank">linkedin.com/in/beebash-gajurel-238b9316a</a></p>
+  </footer>
+
+</body>
+</html>
