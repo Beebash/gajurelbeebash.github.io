@@ -66,7 +66,7 @@ function initTypingEffect() {
 
   const toType = [
     "Customer Service Specialist",
-    "Operations Manager",
+    "Operations Management",
     "API Troubleshooter",
     "Transaction Reconciliation Expert"
   ];
