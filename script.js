@@ -79,23 +79,19 @@ function initTypingEffect() {
   function type() {
     const currentWord = toType[wordIndex];
     
-   if (charIndex === currentWord.length) {
-  setTimeout(() => {
-    typedSpan.textContent = "";   // instantly disappear
-    charIndex = 0;
-    wordIndex = (wordIndex + 1) % toType.length;
-    type();                       // start typing next word
-  }, 1500); // how long the word stays visible
-  return;
-}
-     else {
+ function type() {
+    const currentWord = toType[wordIndex];
+    
+    if (isDeleting) {
+      typedSpan.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+      typeSpeed = 50;
+    } else {
       typedSpan.textContent = currentWord.substring(0, charIndex + 1);
       charIndex++;
       typeSpeed = 100;
     }
 
-  setTimeout(type, typeSpeed);
-}
     if (!isDeleting && charIndex === currentWord.length) {
       isDeleting = true;
       typeSpeed = 1500;
@@ -110,7 +106,7 @@ function initTypingEffect() {
 
   setTimeout(type, 800);
 }
-
+   
 /* ==========================================
    3. ScrollSpy (Active nav link on scroll)
    ========================================== */
