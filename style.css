@@ -1,5 +1,5 @@
 /* ==========================================
-   Beebash PortFolio - Tailored Stylesheet
+   Beebash Portfolio - Tailored Stylesheet
    Beebash Gajurel - Portfolio Website
    ========================================== */
 
@@ -167,10 +167,10 @@ img {
 }
 
 .logo {
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: 1.45rem;
+  font-weight: 700;
   color: var(--bg-white);
-  letter-spacing: 1px;
+  margin-right: auto;
 }
 
 .navmenu ul {
@@ -375,15 +375,19 @@ img {
 }
 
 .profile-details-list p {
-  font-size: 1.05rem;
-  color: var(--text-muted);
+  display:flex;
+   align-items:center;
+   margin-bottom:12px;
 }
 
 .profile-details-list strong {
-  color: var(--text-dark);
-  font-weight: 600;
-  display: inline-block;
-  min-width: 120px;
+  width:90px;
+  flex-shrink:0;
+   display:infline-block;
+}
+
+.profile-details-list span{
+   flex:1;
 }
 
 .skills-container h5 {
