@@ -409,13 +409,17 @@ img {
 .skill-bar-bg {
   height: 12px;
   background-color: #e9ecef;
-  border-radius: 0;
+  border-radius: 4px;
   overflow: hidden;
+  padding: 0;
 }
 
 .skill-bar-fill {
   height: 100%;
   background-color: var(--primary-color);
+   display: block;
+   transition: width ls ease;
+   border-radius: 4px;
 }
 
 .about-narrative p {
