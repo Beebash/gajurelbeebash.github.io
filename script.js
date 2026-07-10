@@ -78,10 +78,7 @@ function initTypingEffect() {
 
   function type() {
     const currentWord = toType[wordIndex];
-    
- function type() {
-    const currentWord = toType[wordIndex];
-    
+       
     if (isDeleting) {
       typedSpan.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
