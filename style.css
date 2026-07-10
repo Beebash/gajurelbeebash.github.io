@@ -347,9 +347,10 @@ img {
 
 .profile-info-row {
   display: flex;
-  gap: 30px;
-  margin-bottom: 40px;
+  gap: 20px; /* reduce spacing between photo and text */
+  margin-bottom: 40px; 
   align-items: center;
+  justify-content: flex-start;  /* push everything left */
 }
 
 .profile-img-container {
@@ -370,6 +371,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: 420px;       /* wider box so text fits better */
 }
 
 .profile-details-list p {
@@ -381,7 +383,7 @@ img {
   color: var(--text-dark);
   font-weight: 600;
   display: inline-block;
-  min-width: 80px;
+  min-width: 120px;
 }
 
 .skills-container h5 {
