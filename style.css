@@ -175,7 +175,9 @@ img {
 
 .navmenu ul {
   display: flex;
-  gap: 24px;
+  gap: 30px;
+  justify-content: flex-end;
+   align-items: center;
 }
 
 .nav-link {
