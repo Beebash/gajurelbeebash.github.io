@@ -10,7 +10,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initPortfolioFilters();
   initContactForm();
   initResumeModal();
+  initNavbarScroll();
+  initTestimonialsSlider();
 });
+
+/* ==========================================
+   Navbar Scroll Styling Transition
+   ========================================== */
+function initNavbarScroll() {
+  const header = document.getElementById('header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
+}
 
 /* ==========================================
    1. Mobile Navigation Menu
@@ -30,7 +48,6 @@ function initMobileMenu() {
       }
     });
 
-    // Close menu when clicking nav links
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -65,7 +82,7 @@ function initTypingEffect() {
     if (isDeleting) {
       typedSpan.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
-      typeSpeed = 50; // speed up deletion
+      typeSpeed = 50;
     } else {
       typedSpan.textContent = currentWord.substring(0, charIndex + 1);
       charIndex++;
@@ -74,11 +91,11 @@ function initTypingEffect() {
 
     if (!isDeleting && charIndex === currentWord.length) {
       isDeleting = true;
-      typeSpeed = 1500; // pause at full word
+      typeSpeed = 1500;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % toType.length;
-      typeSpeed = 500; // pause before next word
+      typeSpeed = 500;
     }
 
     setTimeout(type, typeSpeed);
@@ -96,7 +113,7 @@ function initScrollSpy() {
 
   window.addEventListener('scroll', () => {
     let current = '';
-    const scrollPos = window.scrollY + 120; // offset for nav bar
+    const scrollPos = window.scrollY + 120;
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -108,7 +125,8 @@ function initScrollSpy() {
 
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href === `#${current}`) {
         link.classList.add('active');
       }
     });
@@ -166,7 +184,77 @@ function initContactForm() {
 }
 
 /* ==========================================
-   6. PDF Resume Modal & LocalStorage Uploader
+   6. Accordion Toggle Logic
+   ========================================== */
+window.toggleAccordion = function(headerElement) {
+  const item = headerElement.parentElement;
+  const list = item.parentElement;
+  const items = list.querySelectorAll('.accordion-item');
+  const isActive = item.classList.contains('active');
+
+  items.forEach(i => {
+    i.classList.remove('active');
+  });
+
+  if (!isActive) {
+    item.classList.add('active');
+  }
+};
+
+/* ==========================================
+   7. Testimonials Slider Carousel
+   ========================================== */
+let slideIndex = 1;
+let slideInterval;
+
+function initTestimonialsSlider() {
+  showSlides(slideIndex);
+  slideInterval = setInterval(() => {
+    plusSlides(1);
+  }, 6000);
+}
+
+window.plusSlides = function(n) {
+  clearInterval(slideInterval);
+  showSlides(slideIndex += n);
+  slideInterval = setInterval(() => {
+    plusSlides(1);
+  }, 6000);
+};
+
+window.currentSlide = function(n) {
+  clearInterval(slideInterval);
+  showSlides(slideIndex = n);
+  slideInterval = setInterval(() => {
+    plusSlides(1);
+  }, 6000);
+};
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("testimonial-slide");
+  const dots = document.getElementsByClassName("slider-dot");
+  
+  if (slides.length === 0) return;
+  
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+  
+  slides[slideIndex - 1].classList.add("active");
+  if (dots.length >= slideIndex) {
+    dots[slideIndex - 1].classList.add("active");
+  }
+}
+
+/* ==========================================
+   8. PDF Resume Modal & LocalStorage Uploader
    ========================================== */
 const modal = document.getElementById('resumeModal');
 const pdfViewer = document.getElementById('pdf-viewer');
@@ -205,8 +293,8 @@ function loadStoredPDF() {
     errorState.classList.add('hidden');
     downloadBtn.href = storedPdf;
   } else {
-    pdfViewer.src = 'resume.pdf';
-    downloadBtn.href = 'resume.pdf';
+    pdfViewer.src = 'Beebash-Gajurel-Resume.pdf';
+    downloadBtn.href = 'Beebash-Gajurel-Resume.pdf';
     
     pdfViewer.onerror = () => {
       pdfViewer.classList.add('hidden');
