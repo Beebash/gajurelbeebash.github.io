@@ -162,7 +162,6 @@ img {
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -173,12 +172,14 @@ img {
   margin-right: auto;
 }
 
+.navmenu{
+   margin-left: auto;
+}
+
 .navmenu ul {
   display: flex;
-  gap: 30px;
-  justify-content: flex-end;
-   align-items: center;
-}
+  gap: 24px;
+  }
 
 .nav-link {
   color: var(--bg-white);
