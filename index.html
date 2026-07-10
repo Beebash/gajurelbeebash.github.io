@@ -6,52 +6,55 @@
   <title>Beebash Gajurel - Portfolio</title>
   <meta name="description" content="Professional Portfolio of Beebash Gajurel, Customer Service Specialist and Operations & API Troubleshooting Expert.">
   <meta name="keywords" content="Beebash Gajurel, PayPoint Nepal, Operations Management, API Troubleshooting, Customer Service, Transaction Reconciliation, Nepal">
+
   <!-- Favicon -->
   <link href="assets/profile.JPG" rel="icon">
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
   <!-- Main CSS File -->
   <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
+
   <!-- Navigation Bar -->
   <header id="header" class="header">
     <div class="nav-container">
-      <a href="index.html" class="logo">
-        <span class="logo-dot"></span> Beebash.
-      </a>
+      <a href="index.html" class="logo">DevFolio</a>
+
       <!-- Mobile Nav Toggle -->
       <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
         <i class="bi bi-list"></i>
       </button>
+
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#experience" class="nav-link">Resume</a></li>
-          <li><a href="#portfolio" class="nav-link">Work</a></li>
-          <li><a href="#license" class="nav-link">License</a></li>
+          <li><a href="#credentials" class="nav-link">Credentials</a></li>
+          <li><a href="license.html" class="nav-link">License</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
+
   <!-- Hero Section -->
   <section id="hero" class="hero">
-    <!-- Visual background glow effects -->
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    
     <div class="hero-content">
-      <h2 class="hero-greeting">Hi, I am</h2>
-      <h1 class="hero-name">Beebash Gajurel</h1>
+      <h2 class="hero-greeting">Welcome to my space</h2>
+      <h1 class="hero-name">I am Beebash Gajurel</h1>
       <p class="hero-subtitle">
-        I am a <span class="typed-text" id="typed-text"></span><span class="typed-cursor">|</span>
+        <span class="typed-text" id="typed-text"></span><span class="typed-cursor">|</span>
       </p>
       <div class="hero-buttons">
         <a href="#contact" class="btn btn-primary">Get In Touch</a>
@@ -65,134 +68,121 @@
       <i class="bi bi-chevron-down"></i>
     </a>
   </section>
+
   <!-- About Section -->
-  <section id="about" class="about section-padding">
-    <div class="section-container">
-      <div class="row">
-        <!-- Left Side: Profile Card & Skills -->
-        <div class="col-left">
-          <div class="profile-card">
-            <div class="profile-img-container">
-              <!-- Dynamically links to assets/profile.JPG -->
-              <img src="assets/profile.JPG" alt="Beebash Gajurel" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop'">
-            </div>
-            <div class="profile-details">
-              <div class="detail-item">
-                <span class="detail-label">Name:</span>
-                <span class="detail-value">Beebash Gajurel</span>
+  <section id="about" class="section-padding section-bg">
+    <div class="container">
+      <div class="box-shadow-full">
+        <div class="about-row">
+          
+          <!-- Left Side: Profile Card & Skills -->
+          <div class="about-col-left">
+            <div class="profile-info-row">
+              <div class="profile-img-container">
+                <img src="assets/profile.JPG" alt="Beebash Gajurel" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop'">
               </div>
-              <div class="detail-item">
-                <span class="detail-label">Role:</span>
-                <span class="detail-value">Customer Service & Operations Specialist</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">Location:</span>
-                <span class="detail-value">Kathmandu, Nepal</span>
+              <div class="profile-details-list">
+                <p><strong>Name:</strong> <span>Beebash Gajurel</span></p>
+                <p><strong>Profile:</strong> <span>Customer Support & Ops</span></p>
+                <p><strong>Email:</strong> <span>gajurelbeebash@gmail.com</span></p>
+                <p><strong>Phone:</strong> <span>+977 9861865262</span></p>
               </div>
             </div>
-          </div>
-          <div class="skills-card">
-            <h3 class="card-title">Technical Skills</h3>
-            
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>Customer Service & Support</span>
-                <span>95%</span>
+
+            <div class="skills-container">
+              <h5>Skills</h5>
+              
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Customer Service & Support</span>
+                  <span>95%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 95%"></div>
+                </div>
               </div>
-              <div class="skill-bar-bg">
-                <div class="skill-bar-fill" style="width: 95%"></div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Payment Systems & Wallet Ops</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 90%"></div>
+                </div>
               </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>Payment Systems & Wallet Ops</span>
-                <span>90%</span>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>API & XML Troubleshooting</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 85%"></div>
+                </div>
               </div>
-              <div class="skill-bar-bg">
-                <div class="skill-bar-fill" style="width: 90%"></div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Transaction Reconciliation</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 90%"></div>
+                </div>
               </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>API & XML Troubleshooting</span>
-                <span>85%</span>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Provider Coordination</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 85%"></div>
+                </div>
               </div>
-              <div class="skill-bar-bg">
-                <div class="skill-bar-fill" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>Transaction Reconciliation</span>
-                <span>90%</span>
-              </div>
-              <div class="skill-bar-bg">
-                <div class="skill-bar-fill" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>Partner Coordination (National & Int'l)</span>
-                <span>85%</span>
-              </div>
-              <div class="skill-bar-bg">
-                <div class="skill-bar-fill" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span>Excel & Google Sheets Reports</span>
-                <span>80%</span>
-              </div>
-              <div class="skill-bar-bg">
-                <div class="skill-bar-fill" style="width: 80%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Right Side: Text Narrative -->
-        <div class="col-right">
-          <div class="about-narrative">
-            <span class="section-tagline">About Me</span>
-            <h2 class="section-title">Specialist in Transaction Operations & API Troubleshooting</h2>
-            
-            <p>
-              I am a proactive operations and customer support professional with <strong>7+ years of experience</strong> in digital payment systems, telecom services, and utility platforms. Skilled in transaction monitoring, reconciliation, API-level issue analysis, and partner coordination, I ensure accuracy and reliability in high-volume, mission-critical environments.
-            </p>
-            <p>
-              My expertise includes coordinating with partners both nationally and internationally, strengthening PayPoint Nepal’s global presence through partnerships across South Asia, the Middle East, and Europe. I have resolved complex token issues, monitored and reconciled pending transactions to maintain financial accuracy, and generated and shared mail reports.
-            </p>
-            <p>
-              I manage dealer and provider wallet operations, maintain structured records for transaction tracking, user complaints, and reporting, and have prepared quick‑reference Excel files while updating integration documents to ensure smooth operations.
-            </p>
-            
-            <div class="experience-highlights">
-              <div class="highlight-item">
-                <span class="highlight-number">7+</span>
-                <span class="highlight-text">Years of Experience</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-number">484+</span>
-                <span class="highlight-text">Dealers Managed</span>
-              </div>
-              <div class="highlight-item">
-                <span class="highlight-number">99.9%</span>
-                <span class="highlight-text">API Uptime Resolved</span>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Excel & Google Sheets</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-bar-bg">
+                  <div class="skill-bar-fill" style="width: 80%"></div>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Right Side: Text Narrative -->
+          <div class="about-col-right">
+            <h2 class="title-left-line">About me</h2>
+            <div class="about-narrative">
+              <p>
+                I am a proactive operations and customer support professional with <strong>7+ years of experience</strong> in digital payment systems, telecom services, and utility platforms. Skilled in transaction monitoring, reconciliation, API-level issue analysis, and partner coordination, I ensure accuracy and reliability in high-volume environments.
+              </p>
+              <p>
+                My expertise includes coordinating with partners both nationally and internationally, strengthening PayPoint Nepal’s global presence through partnerships across South Asia, the Middle East, and Europe. I have resolved complex token issues, monitored and reconciled pending transactions to maintain financial accuracy, and generated and shared mail reports.
+              </p>
+              <p>
+                I manage dealer and provider wallet operations, maintain structured records for transaction tracking, user complaints, and reporting, and have prepared quick‑reference Excel files while updating integration documents to ensure smooth operations.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
+
   <!-- Services Section -->
-  <section id="services" class="services section-padding section-alt">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tagline">Expertise</span>
-        <h2 class="section-title">What I Do in PayPoint Nepal</h2>
-        <p class="section-description">Handling crucial daily operations to ensure payment processing uptime, merchant success, and partner integration stability.</p>
+  <section id="services" class="section-padding section-white">
+    <div class="container">
+      <div class="section-title-box">
+        <h2>Services</h2>
+        <p>Providing operations management, api troubleshooting, and transaction reconciliation support.</p>
       </div>
+
       <div class="services-grid">
         <!-- Service Card 1 -->
         <div class="service-card">
@@ -200,268 +190,319 @@
             <i class="bi bi-gears"></i>
           </div>
           <h3>Operations Management</h3>
-          <p>Managing dealer and provider wallet operations, monitoring transaction status, and updating service modes during provider downtimes to prevent inconsistencies.</p>
+          <p>Managing dealer and provider wallet operations, wallet balance limits, adjusting credit rules, and updating service status modes during provider downtime.</p>
         </div>
+
         <!-- Service Card 2 -->
         <div class="service-card">
           <div class="service-icon">
             <i class="bi bi-people"></i>
           </div>
           <h3>Partner Coordination</h3>
-          <p>Strengthening collaborations with 484+ dealers and international network partners across South Asia, the Middle East, and Europe to facilitate seamless transaction routing.</p>
+          <p>Strengthening collaborations with 484+ dealers and international network partners across South Asia, the Middle East, and Europe to facilitate seamless transaction flows.</p>
         </div>
+
         <!-- Service Card 3 -->
         <div class="service-card">
           <div class="service-icon">
             <i class="bi bi-code-slash"></i>
           </div>
           <h3>API Troubleshooting</h3>
-          <p>Analyzing API/XML logs, fixing conditional system logic bugs, and coordinating with developer teams on duplicate payments, timeout adjustments, and JSON serialization errors.</p>
+          <p>Analyzing API/XML payload data, fixing conditional logic blockages, and reporting backend bugs (timeouts, JSON serialization errors) to engineering teams.</p>
         </div>
+
         <!-- Service Card 4 -->
         <div class="service-card">
           <div class="service-icon">
             <i class="bi bi-graph-up-arrow"></i>
           </div>
           <h3>Transaction Reconciliation</h3>
-          <p>Performing daily and monthly financial audits of top-up services, utility payments, and e-wallets, manually resolving "No Status" logs with service providers.</p>
+          <p>Daily audits and manual adjustment verification for Top-ups, Internet, IPTV, and utility provider bills to maintain 100% financial transaction accuracy.</p>
         </div>
       </div>
     </div>
   </section>
-  <!-- Experience & Resume Section -->
-  <section id="experience" class="experience section-padding">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tagline">My Journey</span>
-        <h2 class="section-title">Resume & Education</h2>
-        <div class="resume-actions">
-          <button onclick="openResumeModal()" class="btn btn-primary">
-            <i class="bi bi-file-earmark-pdf"></i> View & Manage PDF Resume
-          </button>
-          <a href="#" id="download-resume-btn" download="Beebash_Gajurel_Resume.pdf" class="btn btn-secondary">
-            <i class="bi bi-download"></i> Download PDF
-          </a>
-        </div>
+
+  <!-- Stats Counter Banner -->
+  <section class="stats-banner">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">484+</span>
+        <span class="stat-label">Dealers Managed</span>
       </div>
-      <div class="timeline-row">
-        <!-- Experience Timeline -->
-        <div class="timeline-col">
-          <h3 class="timeline-col-title"><i class="bi bi-briefcase"></i> Work Experience</h3>
-          
-          <div class="timeline">
-            <div class="timeline-item">
-              <span class="timeline-date">2019 — Present</span>
-              <h4>Customer Service Specialist</h4>
-              <span class="timeline-company">PayPoint Nepal Pvt. Ltd. | Kathmandu</span>
-              <p>Key contributions include:</p>
-              <ul>
-                <li>Monitoring transactions and reconciling telecom (NTC, Ncell), utility (NEA, Khanepani), and IPTV logs.</li>
-                <li>Identifying and fixing critical blockages in XML/API provider communication flows.</li>
-                <li>Coordinating dealer limits, wallet top-ups, and managing national/international service providers.</li>
-              </ul>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-date">2017 — 2018</span>
-              <h4>Retail Sales Worker</h4>
-              <span class="timeline-company">Shoes Bank / Goggles | Kathmandu</span>
-              <p>Handled sales operations, inventory tracking, and client service management in a high-volume retail environment.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-date">2015</span>
-              <h4>Community Volunteer</h4>
-              <span class="timeline-company">Earthquake Relief Operations | Nepal</span>
-              <p>Assisted local community rescue and essential items distribution networks during the 2015 Nepal earthquake emergency.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Education & Certifications Timeline -->
-        <div class="timeline-col">
-          <h3 class="timeline-col-title"><i class="bi bi-journal-bookmark"></i> Education & Certifications</h3>
-          
-          <div class="timeline">
-            <div class="timeline-item">
-              <span class="timeline-date">Completed</span>
-              <h4>Licenses & Certifications</h4>
-              <span class="timeline-company">Introduction to Programming Using Java</span>
-              <p>Completed hands-on software development foundations course at Broadway Infosys.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-date">Higher Secondary</span>
-              <h4>Milestone International College</h4>
-              <span class="timeline-company">Management (+2) | Kathmandu</span>
-              <p>Focused on business management, accounting, and communications.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-date">School Level</span>
-              <h4>AIMS International Academy</h4>
-              <span class="timeline-company">S.L.C | Nepal</span>
-              <p>Completed School Leaving Certificate with honors.</p>
-            </div>
-          </div>
-        </div>
+      <div class="stat-item">
+        <span class="stat-number">7+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">99.9%</span>
+        <span class="stat-label">Uptime Maintained</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Operations Standby</span>
       </div>
     </div>
   </section>
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio section-padding section-alt">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tagline">My Works</span>
-        <h2 class="section-title">Recent Work Achievements</h2>
+
+  <!-- Resume Section -->
+  <section id="experience" class="section-padding section-white">
+    <div class="container">
+      <div class="section-title-box">
+        <h2>Resume</h2>
+        <p>A history of professional support and operations achievements</p>
+      </div>
+
+      <div class="resume-actions">
+        <button onclick="openResumeModal()" class="btn btn-primary">
+          <i class="bi bi-file-earmark-pdf"></i> View CV Modal
+        </button>
+        <a href="Beebash-Gajurel-Resume.pdf" download="Beebash-Gajurel-Resume.pdf" class="btn btn-secondary">
+          <i class="bi bi-download"></i> Download Resume PDF
+        </a>
+      </div>
+
+      <div class="timeline-center-col">
+        <h3 class="timeline-col-title">Work Experience</h3>
         
-        <!-- Filter Categories -->
-        <div class="portfolio-filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="troubleshooting">API Troubleshooting</button>
-          <button class="filter-btn" data-filter="reconciliation">Reconciliation</button>
-          <button class="filter-btn" data-filter="operations">Cross-Border</button>
-        </div>
-      </div>
-      <div class="portfolio-grid" id="portfolio-grid">
-        <!-- Work Item 1 -->
-        <div class="portfolio-item card" data-category="troubleshooting">
-          <div class="portfolio-badge">API Issue Resolved</div>
-          <h3>Token Issue Logic Improvement</h3>
-          <p>Identified and fixed a system logic error where non-IPTV users were blocked from proceeding to pay. Designed custom conditional flows to unblock transaction threads.</p>
-          <span class="portfolio-tech"><i class="bi bi-code"></i> XML / API Logs</span>
-        </div>
-        <!-- Work Item 2 -->
-        <div class="portfolio-item card" data-category="reconciliation">
-          <div class="portfolio-badge">Financial Audit</div>
-          <h3>Platform Transaction Reconciliation</h3>
-          <p>Established a systematic framework for daily audit reporting of top-ups, IPTV bills, and utility networks. Reconciled discrepancy dashboards to solve "No Status" events.</p>
-          <span class="portfolio-tech"><i class="bi bi-file-earmark-spreadsheet"></i> Excel / SQL Logs</span>
-        </div>
-        <!-- Work Item 3 -->
-        <div class="portfolio-item card" data-category="operations">
-          <div class="portfolio-badge">Operations</div>
-          <h3>Cross-Border Support Strengthening</h3>
-          <p>Supported cross-border transactions and verified wallet configurations across networks spanning South Asia, Middle East, and Europe (India, Qatar, Bangladesh, Malaysia).</p>
-          <span class="portfolio-tech"><i class="bi bi-globe"></i> International Ops</span>
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <span class="timeline-date">2019 — Present</span>
+            <span class="timeline-company">PayPoint Nepal Pvt. Ltd. | Kathmandu</span>
+            <h4>Customer Service Specialist</h4>
+            <ul>
+              <li>Managed end-to-end transaction monitoring and reconciliation, ensuring accuracy across Top-up services (NTC, Ncell, SmartCell), Internet, IPTV, utility payments (NEA, Khanepani), and EWallet platforms.</li>
+              <li>Reconciled pending transactions, performed manual updates (refunds/success adjustments) and investigated "No Status" logs.</li>
+              <li>Managed dealer wallet operations: adjusted credit limits, resolved dealer login resets, and monitored billing balances.</li>
+              <li>Fixed critical logic errors (e.g. unblocking validation flows for non-IPTV users) and escalated technical API issues.</li>
+              <li>Supported cross-border transactions across India, Qatar, Bangladesh, and Europe to maintain seamless delivery.</li>
+            </ul>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <span class="timeline-date">2017 — 2018</span>
+            <span class="timeline-company">Shoes Bank / Goggles | Kathmandu</span>
+            <h4>Retail Sales Worker</h4>
+            <p>Handled high-volume customer inquiries, inventory logs, and payment transactions in a busy retail environment.</p>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <span class="timeline-date">2015</span>
+            <span class="timeline-company">Earthquake Relief Operations | Nepal</span>
+            <h4>Community Volunteer</h4>
+            <p>Supported post-earthquake emergency response networks by distributing food packages, clean water, and shelter essentials.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Blog Section -->
-  <section id="blog" class="blog section-padding">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tagline">Insights</span>
-        <h2 class="section-title">Recent Publications</h2>
+
+  <!-- Accordion Section -->
+  <section id="credentials" class="section-padding section-bg">
+    <div class="container">
+      
+      <div class="accordion-layout">
+        <!-- Left Column -->
+        <div class="accordion-title-col">
+          <h2 class="title-left-line" style="margin-bottom: 15px; font-size: 2rem;">Credentials & Achievements</h2>
+          <p>
+            Expand the boxes to view detailed credentials, Java certification details, and key technical works completed at PayPoint Nepal.
+          </p>
+        </div>
+
+        <!-- Right Column Accordion Stack -->
+        <div class="accordion-col">
+          
+          <!-- Accordion Item 1 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-award"></i> Java Programming Certification</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 8px;"><strong>Issuer:</strong> Broadway Infosys, Kathmandu</p>
+              <p style="margin-bottom: 8px;"><strong>Duration:</strong> Aug 2018 — Nov 2018</p>
+              <p style="margin-bottom: 12px;"><strong>Credential ID:</strong> Certificate No: B8461 (64498-066-067)</p>
+              <p>Completed intensive training in Java programming foundations, covering Object-Oriented structures, variables, arrays, conditional statement validations, and logical recursion algorithms.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-code-slash"></i> Token Validation Logic Fix (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong> Prevented transaction blockages for non-IPTV users across the gateway.</p>
+              <p>Identified and debugged a critical system logic bug where transaction validation blocks incorrectly required IPTV checks for users who did not have an active subscription, resulting in failed transaction threads. Developed conditional flow improvements to isolate IPTV validation rules, keeping standard utility payments moving smoothly.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-file-earmark-spreadsheet"></i> Daily Gateway Reconciliation (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong> Resolved "No Status" database transactions and preserved provider balances.</p>
+              <p>Designed a systematic manual reconciliation workflow using quick-reference Excel sheets. Conducted audits of transaction logs against provider dashboards to clear pending or failed logs, executing refunds or balance updates under authorization to ensure financial reporting accuracy.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-globe"></i> Cross-Border Wallet Operations (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong> Expanded PayPoint Nepal's service accessibility globally.</p>
+              <p>Assisted in monitoring cross-border dealer transaction stability and provider connection pools. Maintained direct coordination with network partners in countries including India, Qatar, Bangladesh, Malaysia, and Europe to configure wallet balances, manage service mode limits, and escalate outages.</p>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div class="blog-grid">
-        <!-- Blog Card 1 -->
-        <article class="blog-card card">
-          <div class="blog-img-holder" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
-            <i class="bi bi-journal-code"></i>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="slider-container">
+        
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active">
+          <div class="testimonial-avatar">
+            <img src="assets/profile.JPG" alt="Dealer Partner" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop'">
           </div>
-          <div class="blog-content">
-            <span class="blog-meta"><i class="bi bi-clock"></i> 5 min read | Tech</span>
-            <h3>Improving API Reliability</h3>
-            <p>Practical insights on resolving API logic issues, analyzing XML error payloads, and assuring smooth system provider integrations.</p>
-            <a href="blog.html" class="blog-read-more">Read Article <i class="bi bi-arrow-right"></i></a>
+          <h3 class="testimonial-name">Dealer Partner</h3>
+          <p class="testimonial-role">PayPoint Nepal Agent Network</p>
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
           </div>
-        </article>
-        <!-- Blog Card 2 -->
-        <article class="blog-card card">
-          <div class="blog-img-holder" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
-            <i class="bi bi-shield-check"></i>
+          <p class="testimonial-quote">
+            "Working with Beebash has been seamless. His quick responses, accurate reconciliation, and clear reporting make dealer coordination smooth and reliable. He ensures that token issues are resolved quickly and financial accuracy is maintained."
+          </p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="testimonial-avatar">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Operations Team">
           </div>
-          <div class="blog-content">
-            <span class="blog-meta"><i class="bi bi-clock"></i> 4 min read | Operations</span>
-            <h3>Dealer Coordination Best Practices</h3>
-            <p>Important lessons and structured guidelines learned from managing 484+ dealers and coordinating payment systems on a national level.</p>
-            <a href="blog.html" class="blog-read-more">Read Article <i class="bi bi-arrow-right"></i></a>
+          <h3 class="testimonial-name">Operations Team</h3>
+          <p class="testimonial-role">Internal Review</p>
+          <div class="testimonial-stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
           </div>
-        </article>
+          <p class="testimonial-quote">
+            "Beebash's ability to troubleshoot complex API and XML blockages has greatly reduced dealer ticket resolution times. His proactive management of wallet adjustments ensures zero discrepancies in daily logs."
+          </p>
+        </div>
+
+        <!-- Dots -->
+        <div class="slider-dots">
+          <div class="slider-dot active" onclick="currentSlide(1)"></div>
+          <div class="slider-dot" onclick="currentSlide(2)"></div>
+        </div>
+
       </div>
     </div>
   </section>
+
   <!-- Contact Section -->
-  <section id="contact" class="contact section-padding section-alt">
-    <div class="section-container">
-      <div class="section-header">
-        <span class="section-tagline">Contact</span>
-        <h2 class="section-title">Get In Touch</h2>
+  <section id="contact" class="section-padding section-white">
+    <div class="container">
+      
+      <div class="contact-title-box">
+        <h2>Contact</h2>
+        <p>Feel free to reach out for operations support, provider reconciliation needs, or API integration audits.</p>
       </div>
-      <div class="contact-row">
-        <!-- Contact Information Details -->
-        <div class="contact-info-col">
-          <div class="info-block card">
-            <div class="info-icon"><i class="bi bi-envelope-at"></i></div>
-            <div class="info-text">
-              <h3>Office Email</h3>
-              <p><a href="mailto:b.gajurel@paypoint.com.np">b.gajurel@paypoint.com.np</a></p>
-            </div>
-          </div>
-          <div class="info-block card">
-            <div class="info-icon"><i class="bi bi-envelope"></i></div>
-            <div class="info-text">
-              <h3>Personal Email</h3>
-              <p><a href="mailto:gajurelbeebash@gmail.com">gajurelbeebash@gmail.com</a></p>
-            </div>
-          </div>
-          <div class="info-block card">
-            <div class="info-icon"><i class="bi bi-telephone"></i></div>
-            <div class="info-text">
-              <h3>Phone Number</h3>
-              <p><a href="tel:+9779861865262">+977 9861865262</a></p>
-            </div>
-          </div>
-          <div class="info-block card">
-            <div class="info-icon"><i class="bi bi-linkedin"></i></div>
-            <div class="info-text">
-              <h3>LinkedIn Connection</h3>
-              <p><a href="https://linkedin.com/in/beebash-gajurel-238b9316a" target="_blank">beebash-gajurel-238b9316a</a></p>
-            </div>
-          </div>
-          <div class="info-block card">
-            <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
-            <div class="info-text">
-              <h3>Office Location</h3>
-              <p>Kathmandu, Nepal</p>
-            </div>
+
+      <!-- Info Cards Row -->
+      <div class="contact-info-cards-row">
+        <!-- Card 1 -->
+        <div class="contact-info-card">
+          <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
+          <div class="info-text">
+            <h3>Address</h3>
+            <p>Kathmandu, Nepal</p>
           </div>
         </div>
-        <!-- Contact Form Card -->
-        <div class="contact-form-col card">
-          <form id="contactForm" class="contact-form">
-            <div class="form-group">
-              <label for="form-name">Full Name</label>
-              <input type="text" id="form-name" class="form-control" placeholder="Your Name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="form-email">Email Address</label>
-              <input type="email" id="form-email" class="form-control" placeholder="Your Email" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="form-message">Your Message</label>
-              <textarea id="form-message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
-            <div id="form-status" class="form-status"></div>
-          </form>
+
+        <!-- Card 2 -->
+        <div class="contact-info-card">
+          <div class="info-icon"><i class="bi bi-telephone"></i></div>
+          <div class="info-text">
+            <h3>Call Us</h3>
+            <p><a href="tel:+9779861865262">+977 9861865262</a></p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="contact-info-card">
+          <div class="info-icon"><i class="bi bi-envelope"></i></div>
+          <div class="info-text">
+            <h3>Email Us</h3>
+            <p><a href="mailto:gajurelbeebash@gmail.com">gajurelbeebash@gmail.com</a></p>
+          </div>
         </div>
       </div>
+
+      <!-- Form Container Card -->
+      <div class="contact-form-card">
+        <form id="contactForm" class="contact-form">
+          <div class="contact-form-row">
+            <input type="text" id="form-name" class="form-control" placeholder="Your Name" required>
+            <input type="email" id="form-email" class="form-control" placeholder="Your Email" required>
+          </div>
+          
+          <div class="form-group-full">
+            <input type="text" id="form-subject" class="form-control" placeholder="Subject" required>
+          </div>
+
+          <div class="form-group-full">
+            <textarea id="form-message" class="form-control" rows="6" placeholder="Message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-rounded-blue">Send Message</button>
+          <div id="form-status" class="form-status"></div>
+        </form>
+      </div>
+
     </div>
   </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <p class="copyright">&copy; 2026 Beebash Gajurel. All Rights Reserved.</p>
       <div class="footer-socials">
         <a href="https://linkedin.com/in/beebash-gajurel-238b9316a" target="_blank"><i class="bi bi-linkedin"></i></a>
         <a href="mailto:gajurelbeebash@gmail.com"><i class="bi bi-envelope-fill"></i></a>
         <a href="tel:+9779861865262"><i class="bi bi-telephone-fill"></i></a>
       </div>
+      <p class="copyright">&copy; Copyright DevFolio. All Rights Reserved.</p>
     </div>
   </footer>
+
   <!-- Resume Modal (PDF Viewer & Uploader) -->
   <div id="resumeModal" class="modal">
-    <div class="modal-content card">
+    <div class="modal-content">
       <div class="modal-header">
         <h2>My Resume / Curriculum Vitae</h2>
         <button class="close-modal-btn" onclick="closeResumeModal()">&times;</button>
@@ -470,14 +511,15 @@
       <div class="modal-body">
         <!-- PDF Viewer Iframe -->
         <div class="pdf-container">
-          <iframe id="pdf-viewer" src="resume.pdf" type="application/pdf"></iframe>
+          <iframe id="pdf-viewer" src="Beebash-Gajurel-Resume.pdf" type="application/pdf"></iframe>
           <div id="pdf-error-state" class="pdf-error-state hidden">
             <i class="bi bi-file-earmark-pdf"></i>
             <p>No PDF loaded yet, or your browser doesn't support embedding PDFs directly.</p>
-            <p class="small">Use the upload box below to load your resume PDF into this browser's memory, or place a file named <strong>resume.pdf</strong> in your GitHub repository directory.</p>
+            <p class="small">Place a file named <strong>Beebash-Gajurel-Resume.pdf</strong> in your GitHub repository directory.</p>
           </div>
         </div>
-        <!-- Uploader Section (Allows Beebash to set his PDF in LocalStorage) -->
+
+        <!-- Uploader Section -->
         <div class="uploader-section">
           <div class="uploader-header">
             <h3><i class="bi bi-gear-fill"></i> Custom Resume Uploader (Local Browser Cache)</h3>
@@ -486,7 +528,7 @@
           
           <div class="upload-dropzone" id="dropzone">
             <i class="bi bi-cloud-arrow-up"></i>
-            <p>Drag and drop your <strong>resume.pdf</strong> here, or <span class="browse-link">browse files</span></p>
+            <p>Drag and drop your <strong>Beebash-Gajurel-Resume.pdf</strong> here, or <span class="browse-link">browse files</span></p>
             <input type="file" id="pdf-file-input" accept="application/pdf" class="hidden-input">
           </div>
           
@@ -495,7 +537,9 @@
       </div>
     </div>
   </div>
+
   <!-- JavaScript File -->
   <script src="script.js"></script>
+
 </body>
 </html>
