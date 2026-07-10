@@ -2,30 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>License - Beebash Gajurel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>License & Certifications - Beebash Gajurel</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Main CSS File -->
+  <link href="style.css" rel="stylesheet">
 </head>
+
 <body>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="license.html">License</a>
-  </nav>
+  <!-- Navigation Bar -->
+  <header id="header" class="header">
+    <div class="nav-container">
+      <a href="index.html" class="logo">DevFolio</a>
 
-  <section class="section">
-    <h1></h1>
-    <p>License and Certifications</p>
+      <!-- Mobile Nav Toggle -->
+      <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+        <i class="bi bi-list"></i>
+      </button>
 
-    <div class="post">
-      <h2> </h2>
-      <p>Premier IT Training & Certification Programs
-          Broadway Infosys
-          Issued Aug 2018 · Expires Nov 2018
-          Credential ID Certificate No: B8461 (64498-066-067)
-      </p>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="nav-link">Home</a></li>
+          <li><a href="index.html#about" class="nav-link">About</a></li>
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#experience" class="nav-link">Resume</a></li>
+          <li><a href="index.html#credentials" class="nav-link">Credentials</a></li>
+          <li><a href="license.html" class="nav-link active">License</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Spacer for Subpages -->
+  <div style="height: 100px; background-color: rgba(0, 0, 0, 0.95);"></div>
+
+  <!-- Main Content Section -->
+  <section class="section-padding section-bg">
+    <div class="container">
+      <div class="box-shadow-full">
+        
+        <h2 class="title-left-line"><i class="bi bi-award-fill" style="color: var(--primary-color);"></i> Licenses & Certifications</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 40px;">
+          Verification of technical training and academic credentials.
+        </p>
+
+        <!-- Certification Card -->
+        <div class="license-card">
+          <h3>Introduction to Programming Using Java</h3>
+          <p class="license-meta">
+            <strong>Broadway Infosys</strong> | Issued Aug 2018 - Expires Nov 2018
+          </p>
+          <div style="color: var(--text-muted); font-size: 1.05rem;">
+            <p style="margin-bottom: 12px;">
+              Premier IT Training & Certification Program covering:
+            </p>
+            <ul style="list-style: square; padding-left: 20px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px;">
+              <li>Object-Oriented Programming (OOP) paradigms (Classes, Objects, Inheritance, Polymorphism).</li>
+              <li>Conditional statements, recursion, and structural validation flow design.</li>
+              <li>Variables, data types, logic structures, and debugging processes.</li>
+            </ul>
+            <p><strong>Credential ID:</strong> Certificate No: B8461 (64498-066-067)</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 30px; display: flex; gap: 15px;">
+          <a href="index.html" class="btn btn-primary"><i class="bi bi-arrow-left"></i> Back to Home</a>
+          <button onclick="openResumeModal()" class="btn btn-secondary"><i class="bi bi-file-earmark-pdf"></i> View Full CV</button>
+        </div>
+
+      </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/beebash-gajurel-238b9316a" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:gajurelbeebash@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+        <a href="tel:+9779861865262"><i class="bi bi-telephone-fill"></i></a>
+      </div>
+      <p class="copyright">&copy; Copyright DevFolio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Resume Modal (PDF Viewer & Uploader) -->
+  <div id="resumeModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>My Resume / Curriculum Vitae</h2>
+        <button class="close-modal-btn" onclick="closeResumeModal()">&times;</button>
+      </div>
+      
+      <div class="modal-body">
+        <!-- PDF Viewer Iframe -->
+        <div class="pdf-container">
+          <iframe id="pdf-viewer" src="Beebash-Gajurel-Resume.pdf" type="application/pdf"></iframe>
+          <div id="pdf-error-state" class="pdf-error-state hidden">
+            <i class="bi bi-file-earmark-pdf"></i>
+            <p>No PDF loaded yet, or your browser doesn't support embedding PDFs directly.</p>
+            <p class="small">Place a file named <strong>Beebash-Gajurel-Resume.pdf</strong> in your GitHub repository directory.</p>
+          </div>
+        </div>
+
+        <!-- Uploader Section -->
+        <div class="uploader-section">
+          <div class="uploader-header">
+            <h3><i class="bi bi-gear-fill"></i> Custom Resume Uploader (Local Browser Cache)</h3>
+            <p>If you are testing this locally, upload your resume PDF below. It will save directly in your browser's local memory and render above instantly!</p>
+          </div>
+          
+          <div class="upload-dropzone" id="dropzone">
+            <i class="bi bi-cloud-arrow-up"></i>
+            <p>Drag and drop your <strong>Beebash-Gajurel-Resume.pdf</strong> here, or <span class="browse-link">browse files</span></p>
+            <input type="file" id="pdf-file-input" accept="application/pdf" class="hidden-input">
+          </div>
+          
+          <div class="upload-status" id="upload-status"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
 
 </body>
 </html>
