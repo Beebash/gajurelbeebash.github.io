@@ -147,7 +147,7 @@ img {
   right: 0;
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.9);
-  padding: 20px 0;
+  padding: 18px 0;
   transition: var(--transition-fast);
 }
 
@@ -158,15 +158,17 @@ img {
 }
 
 .nav-container {
-  max-width: 1140px;
+   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 30px;
   display: flex;
+   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--bg-white);
   margin-right: auto;
@@ -178,12 +180,12 @@ img {
 
 .navmenu ul {
   display: flex;
-  gap: 24px;
+  gap: 28px;
   }
 
 .nav-link {
   color: var(--bg-white);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
