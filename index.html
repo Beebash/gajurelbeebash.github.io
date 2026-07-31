@@ -356,7 +356,7 @@
             </div>
             <div class="accordion-content">
               <p style="margin-bottom: 12px;"><strong>Impact:</strong> Prevented transaction blockages for non-IPTV and Utility users across the gateway.</p>
-              <p> Utility: Implemented conditional validation improvements and discussed logic for utility service integration and error response code handling, enhancing system flexibility and reliability. </p>
+              <p> Utility: Implemented conditional validation improvements and discussed logic and error response code handling, enhancing system flexibility and reliability. </p>
               <p>IPTV: Identified and debugged a critical system logic bug where transaction validation blocks incorrectly required IPTV checks for users who did not have an active subscription, resulting in failed transaction threads. Developed conditional flow improvements to isolate IPTV validation rules, keeping standard utility payments moving smoothly.</p>
             </div>
           </div>
@@ -385,6 +385,69 @@
             </div>
           </div>
 
+
+          <!-- Accordion Item 5 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-globe"></i> Ncell Test Number Validation (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong> Previous Ncell test number failed, blocking validation and transaction testing.</p>
+              <p>Coordinated with programmer to debug and fix the issue in existing test number (***) with parameters (CompanyCode: 78, ServiceCode: 0, Special1: empty, Special2: Special 1 Var) with correct parameters, and communicated the resolution to dealers.</p>
+            </div>
+          </div>
+
+         <!-- Accordion Item 6 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-globe"></i> Dealer Wallet Payment Validation Fix (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong> Dealer wallet balance was deducted but payments did not process.</p>
+              <p>Investigated mismatch between wallet top‑up and payment execution flow, verified that the amount was successfully loaded before initiating payments, coordinated with technical team to isolate error handling and stop repeated re‑push attempts, and after the programmer fixed the issue, informed dealers to retry payments.</p>
+            </div>
+          </div>
+
+            <!-- Accordion Item 7 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-globe"></i> NEA Service Charge Logic Issue (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong>Incorrect service charge logic caused wrong payable amounts for NEA advance payments.</p>
+              <p>Work Done: Coordinated with programmer to highlight logic mismatch, explained correct calculation (adding NPR 5.65 to amounts above 501 instead of deducting), and ensured return to old logic to prevent dealer complaints.</p>
+              <p>Result: Logic correction in progress; communicated risks clearly to programmer and awaiting confirmation of fix.</p>
+            </div>
+          </div>
+
+          <!-- Accordion Item 8 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-globe"></i> NEA Counter Permission Error (1009) (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong> Certain NEA counters failed with permission error, preventing users from completing payments.</p>
+              <p>Work Done: Actively communicated with programmer and NEA provider, captured error logs showing {"status":false,"error_code":"1009","message":"Account doesn't have the permission"}, and escalated the issue for provider investigation. Maintained ongoing updates with both sides to track progress and ensure resolution.</p>
+              <p>Result: Error acknowledged by NEA provider; fix still under investigation, with continuous follow‑up to ensure counters function correctly.</p>
+            </div>
+          </div> 
+
+          <!-- Accordion Item 9 -->
+          <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <span><i class="bi bi-globe"></i> Khalti Load Fund Error (099 / API issue) (Recent Work)</span>
+              <i class="bi bi-chevron-right accordion-icon"></i>
+            </div>
+            <div class="accordion-content">
+              <p style="margin-bottom: 12px;"><strong>Impact:</strong> Kiosk transactions consistently failed with error “Something went wrong,” requiring manual intervention by Khalti.</p>
+              <p> Captured request/response logs, identified API error source, queried Khalti provider, shared API URL and details, and maintained communication for resolution.</p>
+            </div>
+          </div> 
+          
         </div>
       </div>
 
