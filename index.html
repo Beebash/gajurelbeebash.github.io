@@ -432,7 +432,7 @@
             <div class="accordion-content">
               <p style="margin-bottom: 12px;"><strong>Impact:</strong> Certain NEA counters failed with permission error, preventing users from completing payments.</p>
               <p>Work Done: Actively communicated with programmer and NEA provider, captured error logs showing {"status":false,"error_code":"1009","message":"Account doesn't have the permission"}, and escalated the issue for provider investigation. Maintained ongoing updates with both sides to track progress and ensure resolution.</p>
-              <p>Result: Error acknowledged by NEA provider; fix still under investigation, with continuous follow‑up to ensure counters function correctly.</p>
+              <p>Result: Root cause identified as an extra space in the API request parameters for certain counters. After correcting the formatting, the permission error (1009) was resolved and payments are now processing successfully across all counters.</p>
             </div>
           </div> 
 
