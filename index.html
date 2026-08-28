@@ -542,22 +542,70 @@
 
       <!-- Form Container Card -->
       <div class="contact-form-card">
-        <form id="contactForm" class="contact-form">
+        <form id="contactForm" class="contact-form" novalidate>
           <div class="contact-form-row">
-            <input type="text" id="form-name" class="form-control" placeholder="Your Name" required>
-            <input type="email" id="form-email" class="form-control" placeholder="Your Email" required>
-          </div>
-          
-          <div class="form-group-full">
-            <input type="text" id="form-subject" class="form-control" placeholder="Subject" required>
+            <input
+              type="text"
+              id="form-name"
+              name="from_name"
+              class="form-control"
+              placeholder="Your Name"
+              required
+              maxlength="100"
+              autocomplete="name"
+              aria-label="Your name"
+              aria-required="true"
+            >
+            <input
+              type="email"
+              id="form-email"
+              name="from_email"
+              class="form-control"
+              placeholder="Your Email"
+              required
+              maxlength="254"
+              autocomplete="email"
+              aria-label="Your email address"
+              aria-required="true"
+            >
           </div>
 
           <div class="form-group-full">
-            <textarea id="form-message" class="form-control" rows="6" placeholder="Message" required></textarea>
+            <input
+              type="text"
+              id="form-subject"
+              name="subject"
+              class="form-control"
+              placeholder="Subject"
+              required
+              maxlength="150"
+              autocomplete="off"
+              aria-label="Message subject"
+              aria-required="true"
+            >
           </div>
 
-          <button type="submit" class="btn-rounded-blue">Send Message</button>
-          <div id="form-status" class="form-status"></div>
+          <div class="form-group-full">
+            <textarea
+              id="form-message"
+              name="message"
+              class="form-control"
+              rows="6"
+              placeholder="Message"
+              required
+              maxlength="3000"
+              aria-label="Your message"
+              aria-required="true"
+            ></textarea>
+          </div>
+
+          <!-- Honeypot field: hidden from real users, traps bots -->
+          <div class="contact-honeypot" aria-hidden="true">
+            <input type="text" name="_honeypot" id="_honeypot" tabindex="-1" autocomplete="off">
+          </div>
+
+          <button type="submit" id="contact-submit-btn" class="btn-rounded-blue">Send Message</button>
+          <div id="form-status" class="form-status" aria-live="polite" aria-atomic="true"></div>
         </form>
       </div>
 
@@ -614,6 +662,9 @@
       </div>
     </div>
   </div>
+
+  <!-- EmailJS Browser SDK v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <!-- JavaScript File -->
   <script src="script.js"></script>

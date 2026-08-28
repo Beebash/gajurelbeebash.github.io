@@ -3,7 +3,32 @@
    Beebash Gajurel - Portfolio Website
    ========================================== */
 
+/* ==========================================
+   EmailJS Configuration
+   Replace the three placeholder values below with your real credentials
+   from the EmailJS dashboard (https://dashboard.emailjs.com):
+     - publicKey:  Account → API Keys → Public Key
+     - serviceId:  Email Services → your service → Service ID
+     - templateId: Email Templates → your template → Template ID
+   ========================================== */
+const EMAILJS_CONFIG = {
+  publicKey: '_wogmpbbb4uea1R1k',   // EmailJS Public Key
+  serviceId: 'service_42vl0tl',     // EmailJS Service ID
+  templateId: 'template_8nj6gd1'     // EmailJS Template ID
+};
+
+/* Rate-limit: minimum milliseconds between allowed submissions */
+const EMAILJS_RATE_LIMIT_MS = 10000;
+let _lastSubmitTime = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize EmailJS once with the public key
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+  } else {
+    console.warn('[EmailJS] SDK not loaded. Contact form will not send emails.');
+  }
+
   initMobileMenu();
   initTypingEffect();
   initScrollSpy();
@@ -78,7 +103,7 @@ function initTypingEffect() {
 
   function type() {
     const currentWord = toType[wordIndex];
-       
+
     if (isDeleting) {
       typedSpan.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
@@ -103,7 +128,7 @@ function initTypingEffect() {
 
   setTimeout(type, 800);
 }
-   
+
 /* ==========================================
    3. ScrollSpy (Active nav link on scroll)
    ========================================== */
@@ -160,33 +185,188 @@ function initPortfolioFilters() {
 }
 
 /* ==========================================
-   5. Contact Form Handler (Mock Submission)
+   5. Contact Form Handler (EmailJS)
    ========================================== */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   const statusDiv = document.getElementById('form-status');
+  const submitBtn = document.getElementById('contact-submit-btn');
 
-  if (form && statusDiv) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('form-name').value;
-      statusDiv.className = 'form-status';
-      statusDiv.textContent = 'Sending your message...';
+  if (!form || !statusDiv || !submitBtn) return;
 
-      setTimeout(() => {
-        statusDiv.className = 'form-status success';
-        statusDiv.innerHTML = `<i class="bi bi-check-circle-fill"></i> Thank you, <strong>${name}</strong>! Your message has been sent successfully.`;
-        form.reset();
-      }, 1500);
-    });
+  /** Helper: safely set status text without XSS risk */
+  function setStatus(text, cssClass) {
+    statusDiv.className = 'form-status' + (cssClass ? ' ' + cssClass : '');
+    statusDiv.textContent = text;
   }
+
+  /** Helper: safely set status with a link node (for error fallback) */
+  function setStatusWithLink(messageText, linkHref, linkText, cssClass) {
+    statusDiv.className = 'form-status' + (cssClass ? ' ' + cssClass : '');
+    statusDiv.textContent = '';
+    const span = document.createElement('span');
+    span.textContent = messageText + ' ';
+    const a = document.createElement('a');
+    a.href = linkHref;
+    a.textContent = linkText;
+    statusDiv.appendChild(span);
+    statusDiv.appendChild(a);
+  }
+
+  /** Helper: restore button to its default enabled state */
+  function resetButton() {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Message';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // --- Honeypot check: bots fill hidden fields, real users don't ---
+    const honeypot = document.getElementById('_honeypot');
+    if (honeypot && honeypot.value.trim() !== '') {
+      // Silently reject bot submission
+      return;
+    }
+
+    // --- Guard: prevent duplicate submissions while one is in flight ---
+    if (submitBtn.disabled) return;
+
+    // --- Rate-limit: prevent rapid repeated clicking ---
+    const now = Date.now();
+    if (now - _lastSubmitTime < EMAILJS_RATE_LIMIT_MS) {
+      setStatus('Please wait a moment before sending another message.', 'error');
+      return;
+    }
+
+    // --- Read and trim field values ---
+    const nameVal = document.getElementById('form-name').value.trim();
+    const emailVal = document.getElementById('form-email').value.trim();
+    const subjectVal = document.getElementById('form-subject').value.trim();
+    const messageVal = document.getElementById('form-message').value.trim();
+
+    // --- Client-side validation ---
+    if (!nameVal) {
+      setStatus('Please enter your name.', 'error');
+      document.getElementById('form-name').focus();
+      return;
+    }
+    if (!emailVal) {
+      setStatus('Please enter your email address.', 'error');
+      document.getElementById('form-email').focus();
+      return;
+    }
+    // Basic email pattern check
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailVal)) {
+      setStatus('Please enter a valid email address.', 'error');
+      document.getElementById('form-email').focus();
+      return;
+    }
+    if (!subjectVal) {
+      setStatus('Please enter a subject.', 'error');
+      document.getElementById('form-subject').focus();
+      return;
+    }
+    if (!messageVal) {
+      setStatus('Please enter your message.', 'error');
+      document.getElementById('form-message').focus();
+      return;
+    }
+
+    // --- Guard: check that EmailJS SDK is loaded ---
+    if (typeof emailjs === 'undefined') {
+      console.error('[EmailJS] SDK failed to load. Cannot send form.');
+      setStatusWithLink(
+        'The contact form is temporarily unavailable. Please email me directly at',
+        'mailto:gajurelbeebash@gmail.com',
+        'gajurelbeebash@gmail.com',
+        'error'
+      );
+      return;
+    }
+
+    // --- Guard: check for unconfigured placeholder credentials ---
+    const placeholders = ['YOUR_PUBLIC_KEY', 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID'];
+    if (
+      placeholders.includes(EMAILJS_CONFIG.publicKey) ||
+      placeholders.includes(EMAILJS_CONFIG.serviceId) ||
+      placeholders.includes(EMAILJS_CONFIG.templateId)
+    ) {
+      console.error(
+        '[EmailJS] Configuration incomplete. ' +
+        'Replace EMAILJS_CONFIG values in script.js with your real credentials.'
+      );
+      setStatusWithLink(
+        'The contact form is temporarily unavailable. Please email me directly at',
+        'mailto:gajurelbeebash@gmail.com',
+        'gajurelbeebash@gmail.com',
+        'error'
+      );
+      return;
+    }
+
+    // --- Disable button & show sending state ---
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    setStatus('Sending your message...', '');
+
+    try {
+      // --- Send form via EmailJS (uses name attributes on form fields) ---
+      await emailjs.sendForm(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        form
+      );
+
+      // --- Success ---
+      _lastSubmitTime = Date.now();
+      form.reset();
+
+      // Build success message using textContent (XSS-safe)
+      const firstName = nameVal.split(' ')[0];
+      statusDiv.className = 'form-status success';
+      statusDiv.textContent = '';
+
+      const icon = document.createElement('i');
+      icon.className = 'bi bi-check-circle-fill';
+      icon.setAttribute('aria-hidden', 'true');
+
+      const msgSpan = document.createElement('span');
+      msgSpan.textContent =
+        ' Thank you, ' + firstName + '! Your message has been sent successfully.';
+
+      statusDiv.appendChild(icon);
+      statusDiv.appendChild(msgSpan);
+
+      // Auto-clear success message after 7 seconds
+      setTimeout(() => {
+        if (statusDiv.classList.contains('success')) {
+          statusDiv.className = 'form-status';
+          statusDiv.textContent = '';
+        }
+      }, 7000);
+
+    } catch (error) {
+      // --- Failure: do NOT reset the form so visitor keeps their text ---
+      console.error('[EmailJS] Send failed:', error);
+      setStatusWithLink(
+        'Sorry, your message could not be sent. Please try again or email me directly at',
+        'mailto:gajurelbeebash@gmail.com',
+        'gajurelbeebash@gmail.com',
+        'error'
+      );
+    } finally {
+      // Always restore the button regardless of outcome
+      resetButton();
+    }
+  });
 }
 
 /* ==========================================
    6. Accordion Toggle Logic
    ========================================== */
-window.toggleAccordion = function(headerElement) {
+window.toggleAccordion = function (headerElement) {
   const item = headerElement.parentElement;
   const list = item.parentElement;
   const items = list.querySelectorAll('.accordion-item');
@@ -214,7 +394,7 @@ function initTestimonialsSlider() {
   }, 6000);
 }
 
-window.plusSlides = function(n) {
+window.plusSlides = function (n) {
   clearInterval(slideInterval);
   showSlides(slideIndex += n);
   slideInterval = setInterval(() => {
@@ -222,7 +402,7 @@ window.plusSlides = function(n) {
   }, 6000);
 };
 
-window.currentSlide = function(n) {
+window.currentSlide = function (n) {
   clearInterval(slideInterval);
   showSlides(slideIndex = n);
   slideInterval = setInterval(() => {
@@ -234,19 +414,19 @@ function showSlides(n) {
   let i;
   const slides = document.getElementsByClassName("testimonial-slide");
   const dots = document.getElementsByClassName("slider-dot");
-  
+
   if (slides.length === 0) return;
-  
+
   if (n > slides.length) { slideIndex = 1; }
   if (n < 1) { slideIndex = slides.length; }
-  
+
   for (i = 0; i < slides.length; i++) {
     slides[i].classList.remove("active");
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].classList.remove("active");
   }
-  
+
   slides[slideIndex - 1].classList.add("active");
   if (dots.length >= slideIndex) {
     dots[slideIndex - 1].classList.add("active");
@@ -261,7 +441,7 @@ const pdfViewer = document.getElementById('pdf-viewer');
 const downloadBtn = document.getElementById('download-resume-btn');
 const errorState = document.getElementById('pdf-error-state');
 
-window.openResumeModal = function() {
+window.openResumeModal = function () {
   if (modal) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -269,7 +449,7 @@ window.openResumeModal = function() {
   }
 };
 
-window.closeResumeModal = function() {
+window.closeResumeModal = function () {
   if (modal) {
     modal.classList.remove('active');
     document.body.style.overflow = '';
@@ -286,7 +466,7 @@ if (modal) {
 
 function loadStoredPDF() {
   const storedPdf = localStorage.getItem('beebash_resume_pdf');
-  
+
   if (storedPdf) {
     pdfViewer.src = storedPdf;
     pdfViewer.classList.remove('hidden');
@@ -295,7 +475,7 @@ function loadStoredPDF() {
   } else {
     pdfViewer.src = 'Beebash-Gajurel-Resume.pdf';
     downloadBtn.href = 'Beebash-Gajurel-Resume.pdf';
-    
+
     pdfViewer.onerror = () => {
       pdfViewer.classList.add('hidden');
       errorState.classList.remove('hidden');
@@ -354,7 +534,7 @@ function initResumeModal() {
     showUploadStatus('Uploading and encoding file...', '');
 
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       try {
         const base64Data = e.target.result;
         localStorage.setItem('beebash_resume_pdf', base64Data);
